@@ -1,7 +1,7 @@
 //Observe que o país só poderá ser México, Canadá ou USA,
 // o sexo só poderá ser F ou M
 // o tempo obtido pelo atleta deverá ser um valor entre 8.0 e 25.5 segundos (terá que ser maior ou
-//igual que 8.0 e menor ou igual que 25.5 segundos)...
+//igual que 8.0 e menor ou igual que 25.5 segundos).
 
 import java.util.Scanner;
 
