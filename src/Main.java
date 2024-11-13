@@ -17,6 +17,9 @@ public class Main {
         float mediaM = 0, mediaF = 0, calculamediaM=0, calculamediaF=0;
         float melhortempo = Float.MAX_VALUE;
 
+        String nomesMexico="";
+        String nomesCanada="";
+        String nomesUSA= "";
         String nomeMelhorTempo = "";
 
         // DEFININDO O TAMNHO DO ARRAY CONFORME O USUARIO QUER;
@@ -51,7 +54,7 @@ public class Main {
                 mediaM = calculamediaM/caculatemposFinalM;
 
             //VERIFICANDO SE O SEXO É F, SE FOR ADICIONA O TEMPO FINAL AO VALOR DA VARIAVEL CALCULAMEDIA
-            // E CONTA +1 NO TEMPOSFINALm
+            // E CONTA +1 NO TEMPOSFINALf
             }
             else if(sexos[i] == 'F'){
                 calculamediaF += temposFinal[i] ;
@@ -66,11 +69,21 @@ public class Main {
             nomeMelhorTempo = nomes[i];
             }
 
-            System.out.println("Qual o país você deseja saber se possui atletas? (México, Canadá ou USA):");
-            pais[i] = entrada.next();
+            //ALOCANDO OS NOMES DOS ATLETAS EM VARIAVEIS PARA CADA PAIS E CONCATENANDO OS NOMES;
+            switch (pais[i]){
 
-
-
+                case "MEXICO":
+                    nomesMexico += nomes[i] + ", ";
+                    break;
+                case "CANADA":
+                    nomesCanada += nomes[i] + ", ";
+                    break;
+                case "USA":
+                    nomesUSA += nomes[i] + ", ";
+                    break;
+                default:
+                    return;
+            }
 
 
         }
@@ -83,7 +96,13 @@ public class Main {
       // System.out.println("Melhor tempo é " + melhortempo +"s" + " do(a) atleta: " + nomeMelhorTempo);
 
         //EXERCICIO 3
+        System.out.println("Qual pais você deseja saber os nomes dos atletas?");
 
+        if (nomesMexico == ""){
+            System.out.println("Não existe jogadores neste pais!");
+        }else {
+            System.out.println(nomesMexico);
+        }
 
     }
 
