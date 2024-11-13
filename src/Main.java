@@ -96,13 +96,7 @@ public class Main {
       // System.out.println("Melhor tempo é " + melhortempo +"s" + " do(a) atleta: " + nomeMelhorTempo);
 
         //EXERCICIO 3
-        System.out.println("Qual pais você deseja saber os nomes dos atletas?");
-
-        if (nomesMexico == ""){
-            System.out.println("Não existe jogadores neste pais!");
-        }else {
-            System.out.println(nomesMexico);
-        }
+        System.out.println(verificarPais());
 
     }
 
@@ -160,6 +154,56 @@ public class Main {
                 System.out.println("Tempo inválido. O tempo deve estar entre 8.0 e 25.5 segundos.");
             }
         } while (true);
+
+    }
+
+    public String verificarPais(){
+        Scanner entrada = new Scanner(System.in);
+
+        String nomesPaises;
+        String nomesMexico="";
+        String nomesCanada="";
+        String nomesUSA= "";
+
+        System.out.println("Qual pais você deseja saber os nomes dos atletas? (México, Canadá ou USA:)");
+        nomesPaises = entrada.next().toUpperCase();
+
+        switch (nomesPaises) {
+
+            case "MEXICO":
+                if (nomesMexico == "") {
+                    System.out.println("Não existe jogadores neste pais!");
+                }else {
+                    System.out.println("Atletas do México: ");
+                    System.out.println(nomesMexico);
+                }
+                break;
+
+            case "CANADA":
+                if (nomesCanada == "") {
+                    System.out.println("Não existe jogadores neste pais!");
+                }else {
+                    System.out.println("Atletas do Canada: ");
+                    System.out.println(nomesCanada);
+                }
+                break;
+
+            case "USA":
+                if (nomesUSA == "") {
+                    System.out.println("Não existe jogadores neste pais!");
+                }else {
+                    System.out.println("Atletas do USA: ");
+                    System.out.println(nomesUSA);
+                }
+                break;
+
+            default:
+                System.out.println("País inválido!");
+                break;
+
+        }
+
+        return nomesPaises;
 
     }
 
