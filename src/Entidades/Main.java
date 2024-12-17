@@ -60,7 +60,7 @@ public class Main {
             }
 
             //Visualizar os dados do atleta (pode ser um homem ou uma mulher) com melhor tempo
-            //na etapa classificatória.
+            //na etapa classificató
             if(temposClassif[i] < melhortempo){
             melhortempo = temposClassif[i];
             nomeMelhorTempo = nomes[i];
