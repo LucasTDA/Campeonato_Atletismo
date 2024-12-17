@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Atleta{
 
-    String nomesMexico="";
+    String nomesMexicoo="";
     String nomesCanada="";
     String nomesUSA= "";
     String nomeMelhorTempo = "";
