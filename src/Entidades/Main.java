@@ -5,23 +5,25 @@ package Entidades;//Observe que o país só poderá ser México, Canadá ou USA,
 
 import java.util.Scanner;
 
+
 public class Main {
     public static void main(String[] args) {
         new Main();
     }
 
     public Main() {
-        Atleta atleta = new Atleta();
+
         Scanner entrada = new Scanner(System.in);
 
         int caculatemposFinalM =0,caculatemposFinalF =0;
         float mediaM = 0, mediaF = 0, calculamediaM=0, calculamediaF=0;
         float melhortempo = Float.MAX_VALUE;
-
+        String nomeMelhorTempo = "";
 
         // DEFININDO O TAMNHO DO ARRAY CONFORME O USUARIO QUER;
-        System.out.println("Digite a quantidade de atletas");
+        System.out.println("Digite a quantidade de atletas que você deseja inserir no sistema");
 
+        Atleta atleta = new Atleta();
         //ATRIBUINDO O TAMANHO DO ARRAY CONFORME O USUARIO DESEJAR
         String[] nomes = atleta.nomes;
         String[] pais = atleta.pais;
@@ -61,34 +63,24 @@ public class Main {
             //na etapa classificatória.
             if(temposClassif[i] < melhortempo){
             melhortempo = temposClassif[i];
-            String nomeMelhorTempo = nomes[i];
+            nomeMelhorTempo = nomes[i];
             }
-
-            /*ALOCANDO OS NOMES DOS ATLETAS EM VARIAVEIS PARA CADA PAIS E CONCATENANDO OS NOMES;
-            switch (pais[i]){
-
-                case "MEXICO":
-                    nomesMexico += nomes[i] + ", ";
-                    break;
-                case "CANADA":
-                    nomesCanada += nomes[i] + ", ";
-                    break;
-                case "USA":
-                    nomesUSA += nomes[i] + ", ";
-                    break;
-                default:
-                    return;
-            }
-            */
 
         }
+
+        System.out.println("Qual pais você deseja saber os nomes dos atletas? (México, Canadá ou USA:");
+        String paisConsulta = entrada.next();
+
+        atleta.verificarPais(nomes,pais,paisConsulta);
+
+
 
         //EXERCICIO 1
       // System.out.println("A Média final dos homens é:" + mediaM);
       // System.out.println("A Média final das mulheres é:" + mediaF);
 
         //EXERCICIO 2
-      // System.out.println("Melhor tempo é " + melhortempo +"s" + " do(a) atleta: " + nomeMelhorTempo);
+      // System.out.println("Melhor tempo na etapa classificatória é: " + melhortempo +"s" + " do(a) atleta: "+ nomeMelhorTempo);
 
         //EXERCICIO 3
         //System.out.println(verificarPais());

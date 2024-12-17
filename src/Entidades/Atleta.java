@@ -4,11 +4,6 @@ import java.util.Scanner;
 
 public class Atleta{
 
-    String nomesMexicoo="";
-    String nomesCanada="";
-    String nomesUSA= "";
-    String nomeMelhorTempo = "";
-
     Scanner entrada = new Scanner(System.in);
 
     public int numeroAtletas = entrada.nextInt();
@@ -62,10 +57,8 @@ public class Atleta{
         Scanner input = new Scanner(System.in);
 
         do {
-
             System.out.print("Digite o tempo final do atleta: ");
             float tempoFinal = input.nextFloat();
-
             if (tempoFinal >= 8.0 && tempoFinal <= 25.5 ) {
                 return tempoFinal;
             } else {
@@ -75,54 +68,17 @@ public class Atleta{
 
     }
 
+    public static void verificarPais(String nomes[], String pais[], String paisConsulta){
+        boolean encontrado = false; // Flag para indicar se algum atleta foi encontrado
 
-    public String verificarPais(){
-        Scanner entrada = new Scanner(System.in);
-
-        String nomesPaises;
-        String nomesMexico="";
-        String nomesCanada="";
-        String nomesUSA= "";
-
-        System.out.println("Qual pais você deseja saber os nomes dos atletas? (México, Canadá ou USA:)");
-        nomesPaises = entrada.next().toUpperCase();
-
-        switch (nomesPaises) {
-
-            case "MEXICO":
-                if (nomesMexico == "") {
-                    System.out.println("Não existe jogadores neste pais!");
-                }else {
-                    System.out.println("Atletas do México: ");
-                    System.out.println(nomesMexico);
-                }
-                break;
-
-            case "CANADA":
-                if (nomesCanada == "") {
-                    System.out.println("Não existe jogadores neste pais!");
-                }else {
-                    System.out.println("Atletas do Canada: ");
-                    System.out.println(nomesCanada);
-                }
-                break;
-
-            case "USA":
-                if (nomesUSA == "") {
-                    System.out.println("Não existe jogadores neste pais!");
-                }else {
-                    System.out.println("Atletas do USA: ");
-                    System.out.println(nomesUSA);
-                }
-                break;
-
-            default:
-                System.out.println("País inválido!");
-                break;
-
+        for (int i = 0; i < nomes.length; i++) { // Percorre todos os atletas
+            if (pais[i].equals(paisConsulta)) {
+                System.out.println(nomes[i]); // Imprime o nome do atleta
+                encontrado = true;
+            }
         }
-
-        return nomesPaises;
-
     }
+
+
+
 }
