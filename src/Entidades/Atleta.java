@@ -6,7 +6,7 @@ public class Atleta{
 
     Scanner entrada = new Scanner(System.in);
 
-    public int numeroAtletas = entrada.nextInt();
+    public int numeroAtletass = entrada.nextInt();
 
     //ATRIBUINDO O TAMANHO DO ARRAY CONFORME O USUARIO DESEJAR
     public String[] nomes = new String[numeroAtletas];
