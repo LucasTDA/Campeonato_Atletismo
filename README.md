@@ -1,7 +1,7 @@
 **PROJETO EM DESENVOLVIMENTO**
 
 
-Desenvolver um algoritmo em pseudocódigo e um programa Java, que deverá ler a quantidade de atletas que participam em um campeonato de atletismo de países da América do Norte (na especialidade de 100 metros rasos) e para cada atleta ler seu nome, 
+Desenvolver um programa Java, que deverá ler a quantidade de atletas que participam em um campeonato de atletismo de países da América do Norte (na especialidade de 100 metros rasos) e para cada atleta ler seu nome, 
 seu país, seu sexo, o tempo obtido na etapa classificatória e o tempo obtido na etapa final.
 
 As funções devem retornar o dado lido, mas verificam e ficarão repetindo a leitura e mostrando uma mensagem de alerta até o usuário digitar um dado válido. 
