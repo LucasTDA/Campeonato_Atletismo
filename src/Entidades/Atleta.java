@@ -157,7 +157,7 @@ public class Atleta {
         if (!nomeMelhorTempoClassificatoria.isEmpty()) {
             System.out.println("- Nome: " + nomeMelhorTempoClassificatoria);
             System.out.println("- Sexo: " + (sexoMelhorTempoClassificatoria == 'M' ? "Masculino" : "Feminino"));
-            System.out.println("- Tempo: " + melhorTempoClassificatoria + " segundos");
+            System.out.println("- Tempos: " + melhorTempoClassificatoria + " segundos");
         } else {
             System.out.println("Nenhum atleta registrado.");
         }
