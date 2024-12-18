@@ -4,9 +4,6 @@ package Entidades;
 // o tempo obtido pelo atleta deverá ser um valor entre 8.0 e 25.5 segundos (terá que ser maior ou
 //igual que 8.0 e menor ou igual que 25.5 segundos)...
 
-import java.util.Scanner;
-
-
 public class Main {
     public static void main(String[] args) {
         new Main();
@@ -18,10 +15,14 @@ public class Main {
         atletas.inicializarDados();
 
         //EXERCICIO 1 e EXERCICIO 2
-        atletas.mediaTempos();
+        //atletas.mediaTempos();
 
         //EXERCICIO 3
-        atletas.verificarPais();
+        //atletas.verificarPais();
+
+        //EXERCICIO 4
+        //atletas.melhorTempo();
+
 
     }
 

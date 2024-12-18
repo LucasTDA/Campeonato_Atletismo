@@ -28,7 +28,7 @@ public class Atleta {
 
         // Coletando dados dos atletas
         for (int i = 0; i < numeroAtletas; i++) {
-            System.out.println("Atleta " + (i + 1) + ":");
+            System.out.println((i + 1)+ "º" + " Atleta "  +  ":");
             System.out.print("Digite o nome do atleta: ");
             nomes[i] = entrada.nextLine();
 
@@ -162,8 +162,30 @@ public class Atleta {
             System.out.println("Nenhum atleta registrado.");
         }
 
+    }
 
+    public void melhorTempo() {
+        float tempoMelhor = Float.MAX_VALUE;
+        String nomeMelhor = "";
+        char sexoMelhorTempo = ' ';
+        String paisMelhorTempo = "";
 
+        for (int i = 0; i < numeroAtletas; i++) {
+
+            //Função Math.min é usada para determinar o menor valor entre temposFinal[i] e temposClassif[i]
+            float menorTempo = Math.min(temposFinal[i], temposClassif[i]);
+            if (menorTempo < tempoMelhor) {
+                tempoMelhor = menorTempo;
+                nomeMelhor = nomes[i];
+                sexoMelhorTempo = sexos[i];
+                paisMelhorTempo = pais[i];
+            }
+        }
+
+        System.out.println("Melhor tempo é de: " + tempoMelhor + "s");
+        System.out.println("- Nome: " + nomeMelhor);
+        System.out.println("- Sexo: " + (sexoMelhorTempo == 'M' ? "Masculino" : "Feminino"));
+        System.out.println("- País: " + paisMelhorTempo);
     }
 
 }
