@@ -28,7 +28,7 @@ public class Atleta {
 
         // Coletando dados dos atletas
         for (int i = 0; i < numeroAtletas; i++) {
-            System.out.println((i + 1)+ "º" + " Atleta "  +  ":");
+            System.out.println((i + 1) + "º" + " Atleta " + ":");
             System.out.print("Digite o nome do atleta: ");
             nomes[i] = entrada.nextLine();
 
@@ -108,11 +108,11 @@ public class Atleta {
         }
     }
 
-    public void mediaTempos(){
+    public void mediaTempos() {
 
-        int caculatemposFinalM =0,caculatemposFinalF =0;
+        int caculatemposFinalM = 0, caculatemposFinalF = 0;
         float mediaM = 0, mediaF = 0;
-        float calculamediaM=0, calculamediaF=0;
+        float calculamediaM = 0, calculamediaF = 0;
 
         float melhorTempoClassificatoria = Float.MAX_VALUE;
         String nomeMelhorTempoClassificatoria = "";
@@ -122,31 +122,31 @@ public class Atleta {
 
             //VERIFICANDO SE O SEXO É M, SE FOR ADICIONA O TEMPO FINAL AO VALOR DA VARIAVEL CALCULAMEDIA
             // E CONTA +1 NO TEMPOSFINALm
-            if(sexos[i] == 'M'){
-                calculamediaM += temposFinal[i] ;
+            if (sexos[i] == 'M') {
+                calculamediaM += temposFinal[i];
                 caculatemposFinalM++;
 
             }
             //VERIFICANDO SE O SEXO É F, SE FOR ADICIONA O TEMPO FINAL AO VALOR DA VARIAVEL CALCULAMEDIA
             // E CONTA +1 NO TEMPOSFINALf
-            else if(sexos[i] == 'F'){
-                calculamediaF += temposFinal[i] ;
+            else if (sexos[i] == 'F') {
+                calculamediaF += temposFinal[i];
                 caculatemposFinalF++;
             }
 
             //Visualizar os dados do atleta pode ser um homem ou uma mulher com melhor tempo na etapa classificatória
-            if(temposClassif[i] < melhorTempoClassificatoria){
+            if (temposClassif[i] < melhorTempoClassificatoria) {
                 melhorTempoClassificatoria = temposClassif[i];
                 nomeMelhorTempoClassificatoria = nomes[i];
                 sexoMelhorTempoClassificatoria = sexos[i];
             }
 
         }
-        if (caculatemposFinalM >0){
-            mediaM = calculamediaM/caculatemposFinalM;
+        if (caculatemposFinalM > 0) {
+            mediaM = calculamediaM / caculatemposFinalM;
         }
-        if (calculamediaF > 0){
-            mediaF = calculamediaF/caculatemposFinalF;
+        if (calculamediaF > 0) {
+            mediaF = calculamediaF / caculatemposFinalF;
         }
 
         //EXIBINDO OS RESULTADOS
@@ -166,7 +166,7 @@ public class Atleta {
 
     public void melhorTempo() {
         float tempoMelhor = Float.MAX_VALUE;
-        String nomeMelhor = "";
+        String nomeMelhorTempo = "";
         char sexoMelhorTempo = ' ';
         String paisMelhorTempo = "";
 
@@ -176,16 +176,57 @@ public class Atleta {
             float menorTempo = Math.min(temposFinal[i], temposClassif[i]);
             if (menorTempo < tempoMelhor) {
                 tempoMelhor = menorTempo;
-                nomeMelhor = nomes[i];
+                nomeMelhorTempo = nomes[i];
                 sexoMelhorTempo = sexos[i];
                 paisMelhorTempo = pais[i];
             }
         }
 
         System.out.println("Melhor tempo é de: " + tempoMelhor + "s");
-        System.out.println("- Nome: " + nomeMelhor);
+        System.out.println("- Nome: " + nomeMelhorTempo);
         System.out.println("- Sexo: " + (sexoMelhorTempo == 'M' ? "Masculino" : "Feminino"));
         System.out.println("- País: " + paisMelhorTempo);
     }
 
+    public void melhorTemposHomens() {
+        float tempoHomensFinalM = 0, tempoHomensFinalC = 0, tempoHomensFinalU = 0;
+        int contagemHomensM = 0, contagemHomensC = 0, contagemHomensU = 0;
+
+        for (int i = 0; i < numeroAtletas; i++) {
+            if (sexos[i] == 'M') {
+                switch (pais[i].toUpperCase()) {
+                    case "MEXICO":
+                        tempoHomensFinalM += temposFinal[i];
+                        contagemHomensM++;
+                        break;
+                    case "CANADA":
+                        tempoHomensFinalC += temposFinal[i];
+                        contagemHomensC++;
+                        break;
+                    default:
+                        tempoHomensFinalU += temposFinal[i];
+                        contagemHomensU++;
+                        break;
+                }
+            }
+        }
+
+        System.out.println("Qual país você deseja saber a média dos homens?");
+        String paisConsulta = entrada.nextLine().toUpperCase();
+
+        float mediaFinalHomens = 0;
+        switch (paisConsulta) {
+            case "MEXICO":
+                mediaFinalHomens = contagemHomensM > 0 ? tempoHomensFinalM / contagemHomensM : 0;
+                break;
+            case "CANADA":
+                mediaFinalHomens = contagemHomensC > 0 ? tempoHomensFinalC / contagemHomensC : 0;
+                break;
+            default:
+                mediaFinalHomens = contagemHomensU > 0 ? tempoHomensFinalU / contagemHomensU : 0;
+                break;
+        }
+        System.out.println("Média final dos homens do país " + paisConsulta + ": " + mediaFinalHomens);
+    }
 }
+

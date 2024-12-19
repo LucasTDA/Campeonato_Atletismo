@@ -23,7 +23,8 @@ public class Main {
         //EXERCICIO 4
         //atletas.melhorTempo();
 
-
+        // Exerciico 5
+        atletas.melhorTemposHomens();
     }
 
 }
