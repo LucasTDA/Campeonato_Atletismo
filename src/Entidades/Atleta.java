@@ -214,7 +214,7 @@ public class Atleta {
         System.out.println("Qual país você deseja saber a média dos homens?");
         String paisConsulta = entrada.nextLine().toUpperCase();
 
-        float mediaFinalHomens = 0;
+        float mediaFinalHomens;
         switch (paisConsulta) {
             case "MEXICO":
                 mediaFinalHomens = contagemHomensM > 0 ? tempoHomensFinalM / contagemHomensM : 0;
@@ -228,5 +228,24 @@ public class Atleta {
         }
         System.out.println("Média final dos homens do país " + paisConsulta + ": " + mediaFinalHomens);
     }
+
+    public void mostrarAtletasPorSexo() {
+        String atletasSelecionados = "";
+
+        System.out.println("Digite o sexo dos atletas que você deseja ver (M/F): ");
+        char sexoConsulta = entrada.next().toUpperCase().charAt(0);
+
+        for (int i = 0; i < numeroAtletas; i++) {
+            if ((sexoConsulta == 'M' && sexos[i] == 'M') || (sexoConsulta == 'F' && sexos[i] == 'F')) {
+                atletasSelecionados += nomes[i] + ", ";
+            }
+        }
+        if (!atletasSelecionados.isEmpty()) {
+            System.out.println("Atletas selecionados: " + atletasSelecionados.substring(0, atletasSelecionados.length() - 2));
+        } else {
+            System.out.println("Nenhum atleta encontrado para o sexo escolhido.");
+        }
+    }
+
 }
 
