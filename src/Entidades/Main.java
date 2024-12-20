@@ -23,10 +23,10 @@ public class Main {
         //EXERCICIO 4
         //atletas.melhorTempo();
 
-        // Exercicico 5
+        // Exercicio 5
         //atletas.melhorTemposHomens();
 
-        //Exercicico 6
+        //Exercicio 6
         //atletas.mostrarAtletasPorSexo();
     }
 

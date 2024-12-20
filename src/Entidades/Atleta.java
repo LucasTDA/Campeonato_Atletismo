@@ -8,7 +8,7 @@ public class Atleta {
     private String[] nomes;
     private String[] pais;
     private char[] sexos;
-    private float[] temposClassif;
+    private float[] temposClassificacao;
     private float[] temposFinal;
 
     private Scanner entrada = new Scanner(System.in);
@@ -23,7 +23,7 @@ public class Atleta {
         nomes = new String[numeroAtletas];
         pais = new String[numeroAtletas];
         sexos = new char[numeroAtletas];
-        temposClassif = new float[numeroAtletas];
+        temposClassificacao = new float[numeroAtletas];
         temposFinal = new float[numeroAtletas];
 
         // Coletando dados dos atletas
@@ -34,7 +34,7 @@ public class Atleta {
 
             pais[i] = lerPais();
             sexos[i] = lerSexo();
-            temposClassif[i] = lerTempoClassif();
+            temposClassificacao[i] = lerTempoClassificacao();
             temposFinal[i] = lerTempoFinal();
         }
     }
@@ -64,7 +64,7 @@ public class Atleta {
         return sexoInput;
     }
 
-    private float lerTempoClassif() {
+    private float lerTempoClassificacao() {
         float tempo;
         do {
             System.out.print("Digite o tempo de classificação entre (8.0 a 25.5 segundos): ");
@@ -135,8 +135,8 @@ public class Atleta {
             }
 
             //Visualizar os dados do atleta pode ser um homem ou uma mulher com melhor tempo na etapa classificatória
-            if (temposClassif[i] < melhorTempoClassificatoria) {
-                melhorTempoClassificatoria = temposClassif[i];
+            if (temposClassificacao[i] < melhorTempoClassificatoria) {
+                melhorTempoClassificatoria = temposClassificacao[i];
                 nomeMelhorTempoClassificatoria = nomes[i];
                 sexoMelhorTempoClassificatoria = sexos[i];
             }
@@ -172,8 +172,8 @@ public class Atleta {
 
         for (int i = 0; i < numeroAtletas; i++) {
 
-            //Função Math.min é usada para determinar o menor valor entre temposFinal[i] e temposClassif[i]
-            float menorTempo = Math.min(temposFinal[i], temposClassif[i]);
+            //Função Math.min é usada para determinar o menor valor entre temposFinal[i] e temposClassificacao[i]
+            float menorTempo = Math.min(temposFinal[i], temposClassificacao[i]);
             if (menorTempo < tempoMelhor) {
                 tempoMelhor = menorTempo;
                 nomeMelhorTempo = nomes[i];
