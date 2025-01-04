@@ -14,3 +14,6 @@ O algoritmo/programa deve permitir realizar alguns cálculos, como:
 4) Determinar o melhor tempo obtido no campeonato e visualizar os dados desse atleta.Devemos analisar todos os tempos, dos homens e das mulheres, na etapa classificatória e também na etapa final. 
 5) Calcular a média dos tempos dos atletas homens, de um determinado país especificado pelo usuário, mas considerando somente os tempos da etapa final. Se não tiver nenhum atleta homem do país informado, apresente uma mensagem. 
 6) Mostrar na tela os atletas de um determinado sexo (M ou F) que foi especificado pelo usuário. Se não tiver nenhum atleta do sexo informado, apresente uma mensagem. 
+
+
+Projeto finalizado com integração ao banco de dados PostgreSQL, com funções de adicionar os atletas
