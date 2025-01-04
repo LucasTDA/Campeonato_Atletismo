@@ -90,6 +90,30 @@ public class Atleta {
         return tempo;
     }
 
+    public int recuperarQtdadeAtletas(){
+        return numeroAtletas;
+    }
+
+    public String recuperarNomeAleta(int posicao){
+        return nomes[posicao];
+    }
+
+    public String recuperarPaisAleta(int posicao){
+        return pais[posicao];
+    }
+
+    public char recuperarSexoAleta(int posicao){
+        return sexos[posicao];
+    }
+
+    public float recuperarTempoClassificacaoAleta(int posicao){
+        return temposClassificacao[posicao];
+    }
+
+    public float recuperarTempoFinalAleta(int posicao){
+        return temposFinal[posicao];
+    }
+
     public void verificarPais() {
         System.out.print("Digite o país para consultar os atletas (México, Canadá ou USA): ");
         String paisConsulta = entrada.nextLine().toUpperCase();
@@ -246,6 +270,7 @@ public class Atleta {
             System.out.println("Nenhum atleta encontrado para o sexo escolhido.");
         }
     }
+
 
 }
 
